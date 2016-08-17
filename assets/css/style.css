@@ -1,0 +1,25 @@
+.image0, .image1, .image2, .image3, .image4, .image5, .image6 {
+	width: 70px;
+	height: 200px;
+	background: url('../images/hangman1.png');
+	background-position: 0px 0px;
+}
+
+.image1 {
+	background-position: -70px 0px;
+}
+.image2 {
+	background-position: -145px 0px;
+}
+.image3 {
+	background-position: -225px 0px;
+}
+.image4 {
+	background-position: -300px 0px;
+}
+.image5 {
+	background-position: -375px 0px;
+}
+.image6 {
+	background-position: -450px 0px;
+}
