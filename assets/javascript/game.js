@@ -5,14 +5,20 @@ function setImage(number) {
 }
 
 
-var wordlist = [
-["T", "H", "E", "B", "E", "A", "T", "L", "E", "S"],
-  ["G","R","E","E","N","D","A","Y",],
-  ["A","C","D","C",],
-  ["M","C","R",],
-  ["R","O","L","L","I","N","G","S","T","O", "N", "E", "S" ,]
-  ["N", "I","R","V", "A","N","A"]
-]
+function loadWordlist() {
+    var word = '';
+    $.ajax({
+        url: 'assets/wordlist.json',
+        async: false
+    }).done(function(data) {
+        for (word in data) {
+            wordlist.push(data[word]);
+        }
+    }, 'json');
+
+
+
+
 
 var random = Math.floor((Math.random()*(wordlist.length-1)));
 
