@@ -4,7 +4,8 @@ function setImage(number) {
 	$('#hangman_img').removeAttr("class").addClass("image" +  number);
 }
 
-
+// WE'VE NOT DONE AJAX
+// WHERE WAS THIS SOLUTION HEADED?
 function loadWordlist() {
     var word = '';
     $.ajax({
@@ -15,14 +16,18 @@ function loadWordlist() {
             wordlist.push(data[word]);
         }
     }, 'json');
+// YOU NEED TO CLOSE THIS FUNCTION
+}
 
 
 
 
 
 var random = Math.floor((Math.random()*(wordlist.length-1)));
-
-var newWord = wordlist[random]
+// MISSING SEMICOLON
+// WE DONT HAVE ACCESS TO WORDLIST -- WORDLIST COULD BE AN ARRAY WITH WORDS IN IT
+//  DITCH THE AJAX FOR THIS PROJECT
+var newWord = wordlist[random];
 
 
 var guesses = [];
@@ -37,7 +42,7 @@ function drawWord() {
     while (targetWord == '') {
         newWord();
     }
-   
+
 }
 
 function drawGuesses() {
@@ -117,8 +122,8 @@ function update() {
 }
 
 $(document).ready(function() {
-    
-    drawWord();
-    drawGuesses();
-    $('#guess').attr('onkeyup', 'update();');
+  drawWord();
+  drawGuesses();
+  // YOU WANT AN EVENT LISTENER NOT AN ATTR
+  $('#guess').on('keyup', update());
 });
