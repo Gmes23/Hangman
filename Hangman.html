@@ -1,68 +1,74 @@
 <!DOCTYPE html>
 <html>
 <head>
-
 	<title>Hangman</title>
-
-	
-
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-	
-    <script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	
+    <!-- PUT YOUR JS ABOVE THE CLOSING BODY TAG -->
+    <!-- <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script> -->
+	<!-- LOAD BOOTSTRAP BEFORE YOUR STYLES -->
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
+<!-- WATCH YOUR IDENTATION -->
 <body>
-	<div class="cotainer">
-		<div class="pageHeader">
-			<h1><strong>Welcome to Hangman</strong></h1>
-		</div>	
-	
-
-		<div class="col-md-2">
-			<div id="hangman_img" class="image0">
-		</div>
-
-		<div id="word" class="col-md-4 text-center">
+    <!--YOU'VE MISSPELLED CONTAINER  -->
+	<div class="container">
+        <!-- COLUMNS SHOULD BE WRAPPED IN A ROW -->
+        <div class="row">
+            <!-- MAKE THIS A COL -->
+            <div class="pageHeader col-md-12">
+                <h1><strong>Welcome to Hangman</strong></h1>
+            </div>
+        	<div class="col-md-2">
+                <!-- YOU NEED TO CLOSE THIS DIV -->
+        		<div id="hangman_img" class="image0"></div>
+        	</div>
+        	<div id="word" class="col-md-4 text-center">
                 <h4>Your word is:</h4>
                 <p><strong id="targetWord"></strong></p>
             </div>
-
             <div id="guesses" class="col-md-4 text-center">
                 <h4>You have guessed:</h4>
                 <p><strong id="previousGuesses"><em>You have to guess something first </em></strong></p>
             </div>
+        </div>
         <div class="row">
-        	<div id="guessInput" class="col-md-8 text center">
-        		<br/>
-        		<br/>
-        		<br/>
-        		<center><input type="text" maxlength="1" id="guess" placeholder="type a letter" /></center> 
-       		</div>
-       	</div>
-
+            <div id="guessInput" class="col-md-8 text center">
+            <!-- SPACING LIKE THIS IS A QUICK FIX. USE MARGINS/PADDING IN CSS AS A BEST PRACTICE -->
+            <br/>
+            <br/>
+            <br/>
+            <!-- THIS CENTERING METHOD IS DEPRECATED. CENTER WITH CSS -->
+            <center>
+                <input type="text" maxlength="1" id="guess" placeholder="type a letter" />
+            </center>
+            </div>
+        </div>
     </div>
-    
 
-    <script src="assets/javascript/game.js" type="text/javascript">
-    
-        <script src="js/hangman.js" type="text/javascript"></script>
-        <div class="modal fade" id="endGameDialog" tabindex="-1" role="dialog" aria-labelledby="endGameDialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4><a onclick="resetGame();" class="close" data-dismiss="modal" aria-hidden="true">&times;</a></h4>
-                        <h4 id="endGameDialogTitle"></h4>
-                    </div>
-                    <div class="modal-body" id="endGameDialogContent"></div>
-                    <div class="modal-footer">
-                        <h4><a onclick="resetGame();" class="btn btn-primary" data-dismiss="modal">Reset</a></h4>
-                    </div>
+    <!-- JUST PUT YOUR MODALS AT THE BOTTOM OF THE HTML, YOU WONT SEE THEM UNTIL YOU NEED TO -->
+    <div class="modal fade" id="endGameDialog" tabindex="-1" role="dialog" aria-labelledby="endGameDialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <!-- DONT USE INLINE JAVASCRIPT ONCLICK EVENTS -->
+                    <h4><a onclick="resetGame();" class="close" data-dismiss="modal" aria-hidden="true">&times;</a></h4>
+                    <h4 id="endGameDialogTitle"></h4>
+                </div>
+                <div class="modal-body" id="endGameDialogContent"></div>
+                <div class="modal-footer">
+                    <!-- DONT USE INLINE JAVASCRIPT ONCLICK EVENTS -->
+                    <h4><a onclick="resetGame();" class="btn btn-primary" data-dismiss="modal">Reset</a></h4>
                 </div>
             </div>
         </div>
-        <script src="js/bootstrap.min.js" type="text/javascript"></script>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <!-- CLOSE THIS JS -->
+    <script src="assets/javascript/game.js" type="text/javascript"></script>
+    <!-- WHAT IS THIS FILE? -->
+    <!-- <script src="js/hangman.js" type="text/javascript"></script> -->
+    <script src="js/bootstrap.min.js" type="text/javascript"></script>
 </html>
